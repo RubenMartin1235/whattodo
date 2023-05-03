@@ -17,7 +17,7 @@ class TasklistFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => fake()->sentence(3),
         ];
     }
 }

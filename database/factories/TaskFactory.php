@@ -16,8 +16,13 @@ class TaskFactory extends Factory
      */
     public function definition(): array
     {
+        $pattern = 'Y-m-d H:i:s';
+        $deadline = new \DateTime(date($pattern));
+        $deadline->add(new \DateInterval('P10D'));
         return [
-            //
+            'name' => fake()->sentence(3),
+            'order' => 1,
+            'deadline' => $deadline->format($pattern),
         ];
     }
 }
